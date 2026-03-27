@@ -28,7 +28,7 @@ export function GreetingAvatar() {
               <X size={14} className="md:w-4 md:h-4" />
             </button>
             <img 
-              src="src/images/bhaumik_hi.png" 
+              src="src/images/bhaumik_hi.jpg" 
               alt="Bhaumik Greeting"
               className="w-full h-full object-cover bg-accent/10"
               referrerPolicy="no-referrer"
@@ -56,7 +56,7 @@ export function GreetingAvatar() {
       >
         <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors" />
         <img 
-          src="src/images/bhaumik_hi.png" 
+          src="src/images/bhaumik_hi.jpg" 
           alt="Avatar"
           className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover relative z-10 border border-accent/20 bg-bg"
           referrerPolicy="no-referrer"

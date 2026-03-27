@@ -17,11 +17,11 @@
   --accent: #00f2ff;
   --accent-rgb: 0, 242, 255;
   --accent-dim: rgba(0, 242, 255, 0.1);
-  --bg: #050505;
-  --surface: #0a0a0a;
-  --border: rgba(255, 255, 255, 0.1);
-  --foreground: #ffffff;
-  --foreground-rgb: 255, 255, 255;
+  --bg: #020617;
+  --surface: #0f172a;
+  --border: rgba(255, 255, 255, 0.08);
+  --foreground: #f8fafc;
+  --foreground-rgb: 248, 250, 252;
 }
 
 .light {
