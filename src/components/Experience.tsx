@@ -5,10 +5,10 @@ export function Experience() {
   const { t } = useLanguage();
 
   return (
-    <section id="experience" className="py-32 px-6 max-w-7xl mx-auto">
+    <section id="experience" className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row gap-12">
         <div className="md:w-1/3">
-          <div className="sticky top-32 z-10 bg-background py-4 -mx-4 px-4 mb-4">
+          <div className="sticky top-32 z-10 bg-bg py-4 -mx-4 px-4 mb-4">
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter">
               {t.experience.title1} <br />
               <span className="text-accent">{t.experience.title2}</span>
@@ -23,7 +23,7 @@ export function Experience() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 glass rounded-3xl p-6 border-accent/20 hidden md:block"
+            className="mt-12 glass rounded-3xl p-6 border-accent/20"
           >
             <div className="w-full aspect-square rounded-2xl overflow-hidden bg-accent/10 mb-4">
               <img 

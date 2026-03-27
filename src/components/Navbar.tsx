@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { cn } from "../lib/utils";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Briefcase, Wrench, FolderKanban, Sparkles, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLanguage } from "../LanguageContext";
 import { LanguageSelector } from "./LanguageSelector";
@@ -39,11 +39,11 @@ export function Navbar() {
   );
 
   const navItems = [
-    { name: t.nav.experience, href: "#experience" },
-    { name: t.nav.skills, href: "#skills" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.ai, href: "#ai" },
-    { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.experience, href: "#experience", icon: Briefcase },
+    { name: t.nav.skills, href: "#skills", icon: Wrench },
+    { name: t.nav.projects, href: "#projects", icon: FolderKanban },
+    { name: t.nav.ai, href: "#ai", icon: Sparkles },
+    { name: t.nav.contact, href: "#contact", icon: Mail },
   ];
 
   useEffect(() => {
@@ -58,23 +58,28 @@ export function Navbar() {
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6 pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center p-0 pointer-events-none"
     >
       <motion.div 
         style={{ backgroundColor, borderColor, color: textColor }}
-        className="flex items-center gap-1 p-1 rounded-full backdrop-blur-xl border pointer-events-auto max-w-[95vw]"
+        className="flex items-center gap-1 p-1 rounded-b-2xl md:rounded-full backdrop-blur-xl border-x border-b md:border pointer-events-auto max-w-full md:max-w-[95vw] w-full md:w-auto"
       >
-        <div className="flex items-center gap-1 min-w-max px-2">
+        <div className="flex items-center gap-1 min-w-max px-2 w-full md:w-auto justify-center">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
               className={cn(
-                "px-3 md:px-4 py-2 text-[10px] md:text-sm font-medium transition-colors rounded-full hover:bg-foreground/10"
+                "p-2 md:px-4 md:py-2 transition-colors rounded-full hover:bg-foreground/10 flex items-center gap-2 group relative"
               )}
               style={{ color: "inherit" }}
+              title={item.name}
             >
-              {item.name}
+              <item.icon size={18} className="md:hidden" />
+              <span className="text-sm font-medium hidden md:inline">{item.name}</span>
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-foreground text-background text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none md:hidden whitespace-nowrap">
+                {item.name}
+              </span>
             </a>
           ))}
           <div className="w-px h-4 mx-1 md:mx-2 bg-border shrink-0" />
@@ -89,7 +94,7 @@ export function Navbar() {
             style={{ color: "inherit" }}
             aria-label="Toggle theme"
           >
-            {isLight ? <Moon size={16} className="md:w-[18px] md:h-[18px]" /> : <Sun size={16} className="md:w-[18px] md:h-[18px]" />}
+            {isLight ? <Moon size={18} /> : <Sun size={18} />}
           </button>
         </div>
       </motion.div>

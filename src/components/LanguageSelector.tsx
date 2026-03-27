@@ -43,7 +43,7 @@ export function LanguageSelector() {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              className="absolute right-0 mt-2 w-48 glass rounded-2xl border border-accent/20 shadow-2xl overflow-y-auto max-h-[70vh] z-[1000]"
+              className="absolute right-0 mt-4 w-48 bg-surface rounded-2xl border border-accent/20 shadow-2xl overflow-y-auto max-h-[70vh] z-[1000]"
             >
               <div className="p-2 grid gap-1">
                 {languages.map((lang) => (
@@ -54,7 +54,7 @@ export function LanguageSelector() {
                       setIsOpen(false);
                     }}
                     className={cn(
-                      "flex items-center justify-between px-3 py-2 rounded-xl transition-all text-left group",
+                      "flex items-center justify-between px-3 py-2.5 rounded-xl transition-all text-left group",
                       language === lang.code 
                         ? "bg-accent text-background" 
                         : "hover:bg-foreground/5 text-foreground/60 hover:text-foreground"

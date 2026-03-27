@@ -5,9 +5,9 @@ export function Skills() {
   const { t } = useLanguage();
 
   return (
-    <section id="skills" className="py-32 px-6 bg-surface/30">
+    <section id="skills" className="py-16 md:py-32 px-6 bg-surface/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.skills.title}</h2>
           <p className="text-foreground/40 text-sm md:text-base">{t.skills.subtitle}</p>
         </div>

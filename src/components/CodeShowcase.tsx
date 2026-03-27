@@ -55,7 +55,7 @@ export function CodeShowcase() {
         <div className="flex items-center justify-center h-full bg-foreground/5 rounded-2xl overflow-hidden p-8">
           <div className="relative w-48 h-64 rounded-2xl overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-purple-500/20 animate-pulse" />
-            <div className="absolute inset-[2px] bg-background rounded-[14px] z-10 flex flex-col items-center justify-center p-4 text-center">
+            <div className="absolute inset-[2px] bg-bg rounded-[14px] z-10 flex flex-col items-center justify-center p-4 text-center">
               <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 border border-accent/20">
                 <Cpu className="text-accent" size={24} />
               </div>
@@ -177,8 +177,8 @@ Provide a single-file React component.`,
             </button>
           </div>
 
-          <div className="flex-1 font-mono text-[10px] space-y-4 overflow-hidden flex flex-col">
-            <div className="p-3 bg-foreground/5 rounded-xl border border-foreground/10">
+          <div className="flex-1 font-mono text-[10px] space-y-4 overflow-y-auto flex flex-col min-h-0">
+            <div className="p-3 bg-foreground/5 rounded-xl border border-foreground/10 shrink-0">
               <p className="text-foreground/20 mb-1 uppercase tracking-widest">{t.showcase.prompt}</p>
               <p className="text-foreground/60 italic leading-relaxed">
                 {promptMode === "basic" 
@@ -187,9 +187,9 @@ Provide a single-file React component.`,
               </p>
             </div>
             
-            <div className="flex-1 p-4 bg-accent/5 rounded-xl border border-accent/20 overflow-hidden flex flex-col">
-              <p className="text-accent mb-3 uppercase tracking-widest font-bold">{t.showcase.aiOutputPreview}</p>
-              <div className="flex-1 flex flex-col justify-center">
+            <div className="flex-1 p-4 bg-accent/5 rounded-xl border border-accent/20 overflow-y-auto flex flex-col min-h-0">
+              <p className="text-accent mb-3 uppercase tracking-widest font-bold shrink-0">{t.showcase.aiOutputPreview}</p>
+              <div className="flex-1 flex flex-col justify-center min-h-fit">
                 <AnimatePresence mode="wait">
                   {isGenerating ? (
                     <motion.div 
@@ -318,8 +318,8 @@ print(schema)`,
   }, [activeId]);
 
   return (
-    <section id="showcase" className="py-32 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-12 md:mb-20">
+    <section id="showcase" className="py-16 md:py-32 px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-10 md:mb-20">
         <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">{t.showcase.title1} <span className="text-accent">{t.showcase.title2}</span></h2>
         <p className="text-foreground/40 text-sm md:text-base">{t.showcase.subtitle}</p>
       </div>

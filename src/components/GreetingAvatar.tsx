@@ -23,7 +23,7 @@ export function GreetingAvatar() {
                 e.stopPropagation();
                 setIsOpen(false);
               }}
-              className="absolute top-2 right-2 md:top-3 md:right-3 p-1 rounded-full bg-background/50 hover:bg-accent hover:text-background transition-colors z-10"
+              className="absolute top-2 right-2 md:top-3 md:right-3 p-1 rounded-full bg-bg/50 hover:bg-accent hover:text-bg transition-colors z-10"
             >
               <X size={14} className="md:w-4 md:h-4" />
             </button>
@@ -58,7 +58,7 @@ export function GreetingAvatar() {
         <img 
           src="src/images/bhaumik_hi.png" 
           alt="Avatar"
-          className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover relative z-10 border border-accent/20 bg-background"
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover relative z-10 border border-accent/20 bg-bg"
           referrerPolicy="no-referrer"
         />
         

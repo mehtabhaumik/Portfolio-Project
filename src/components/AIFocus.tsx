@@ -18,7 +18,7 @@ export function AIFocus() {
   const icons = [Terminal, Zap, Sparkles];
 
   return (
-    <section id="ai" className="py-32 px-6 relative overflow-hidden">
+    <section id="ai" className="py-16 md:py-32 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-grid opacity-20 -z-10" />
       
       <div className="max-w-7xl mx-auto">
