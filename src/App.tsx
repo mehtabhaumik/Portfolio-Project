@@ -13,10 +13,14 @@ import { CodeShowcase } from "./components/CodeShowcase";
 import { Contact } from "./components/Contact";
 import { MouseGlow } from "./components/MouseGlow";
 import { GreetingAvatar } from "./components/GreetingAvatar";
+import { LoadingScreen } from "./components/LoadingScreen";
 import { motion, useScroll, useSpring } from "motion/react";
 import { LanguageProvider } from "./LanguageContext";
+import { useState, useEffect } from "react";
+import { cn } from "./lib/utils";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -24,9 +28,18 @@ export default function App() {
     restDelta: 0.001
   });
 
+  useEffect(() => {
+    // Simulate initial load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // Matches the LoadingScreen's internal logic roughly
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <LanguageProvider>
-      <main className="relative bg-bg min-h-screen">
+      <LoadingScreen />
+      <main className={cn("relative bg-bg min-h-screen", isLoading ? "h-screen overflow-hidden" : "")}>
         <MouseGlow />
         <GreetingAvatar />
         
